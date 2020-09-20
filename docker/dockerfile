@@ -29,19 +29,15 @@ RUN touch /root/.ssh/known_hosts \ && ssh-keyscan github.com > /root/.ssh/known_
 # install phantomjs to PATH
 #RUN cd /usr/share \ && ln -s /usr/share/phantomjs/phantomjs /usr/bin/phantomjs \ && phantomjs --version
 
-WORKDIR /usr/www
-
 RUN export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 COPY . /usr/www
-RUN git pull \ && npm i --verbose
 
+WORKDIR /usr/www
+RUN npm i --verbose -g @angular/cli > /dev/null
 #RUN mv {/usr/tmp/*,/usr/tmp/.*} /usr/www -f
 
 COPY ./docker/.gitmodules.ssh /usr/www/
 RUN mv /usr/www/.gitmodules.ssh /usr/www/.gitmodules -f
-
-#RUN npm install \ && npm i --verbose -g @angular-devkit/build-angular \ && npm i --verbose -g @angular/cli > /dev/null \ && npm i -g @angular/core
-
 
 ENTRYPOINT ["bash", "/tmp/submodules.sh" ]
