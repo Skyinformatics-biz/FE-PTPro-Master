@@ -1,2 +1,2 @@
-docker-compose up --build --remove-orphans --force-recreate
+docker-compose up --build
 read -p "Press anything to exit"
