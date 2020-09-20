@@ -1,21 +1,21 @@
 version: "3.7"
 services:
-  angular-ui:
-    image: angular-ui
+  fe-ptpro-master:
+    image: fe-ptpro-master
     build:
       context: .
       dockerfile: docker/dockerfile
-    container_name: ptpro-master-ui
+    container_name: fe-ptpro-master
     hostname: 'localhost'
     restart: "no"
     tty: true
-    working_dir: /app
+    working_dir: /usr/www
     environment:
       NG_CLI_ANALYTICS: "false"
     ports:
       - "4800:4800"
     volumes:
-      - ./master:/usr/www
+      - ./:/usr/www
     #command: sh -c "/tmp/submodules.sh"
     networks:
       - app-network
@@ -31,7 +31,7 @@ services:
     volumes:
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
-      - 'angular-ui'
+      - 'fe-ptpro-master'
     networks:
       - app-network
 #Docker networks

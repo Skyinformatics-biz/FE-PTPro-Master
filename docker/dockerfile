@@ -32,16 +32,16 @@ RUN touch /root/.ssh/known_hosts \ && ssh-keyscan github.com > /root/.ssh/known_
 WORKDIR /usr/www
 
 RUN export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+
 COPY . /usr/www
-RUN git pull
+RUN git pull \ && npm i --verbose
+
 #RUN mv {/usr/tmp/*,/usr/tmp/.*} /usr/www -f
+
 COPY ./docker/.gitmodules.ssh /usr/www/
 RUN mv /usr/www/.gitmodules.ssh /usr/www/.gitmodules -f
 
-RUN npm update
-RUN npm i --verbose -g @angular/cli > /dev/null
-#RUN npm i --verbose -g --save-dev @angular-devkit/build-angular 
+#RUN npm install \ && npm i --verbose -g @angular-devkit/build-angular \ && npm i --verbose -g @angular/cli > /dev/null \ && npm i -g @angular/core
 
-#RUN mv /usr/www/src/app/webconfig.ts.env.prod /usr/www/src/app/webconfig.ts
 
 ENTRYPOINT ["bash", "/tmp/submodules.sh" ]
