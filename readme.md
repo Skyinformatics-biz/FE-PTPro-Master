@@ -53,13 +53,13 @@ The developer should follow strictly defined practices
 
 ### Modules
 FE-PTPro (Frontend Graphical Interface) built on primary Angular.io and is split into categorical modules that can be run independently using docker containers. Each module contains detailed technical description. 
- 1. **[Application](https://github.com/Skyinformatics-biz/FE-PTPro-Application)** - Application internal functions.
- 2. **[Communication](https://github.com/Skyinformatics-biz/FE-PTPro-Communication)** - Platform messaging/com module interface.
- 3. **[Profiles](https://github.com/Skyinformatics-biz/FE-PTPro-Profiles)** - Platform members and dynamic profile pages.
- 4. **[Public](https://github.com/Skyinformatics-biz/FE-PTPro-Public)** - Public pages for platform visitors.
- 5. **[Providers](https://github.com/Skyinformatics-biz/FE-PTPro-Providers)** - Provider/service classes for all application modules.
- 6. **[Secure](https://github.com/Skyinformatics-biz/FE-PTPro-Secure)** - Authorized pages for platform members.
- 7. **[Payment](https://github.com/Skyinformatics-biz/FE-PTPro-Payment)** - Application/platform Subscription Interface.
+ 1. **[Application](https://github.com/Skyinformatics-biz/FE-PTPro-Application-Module)** - Application internal functions.
+ 2. **[Communication](https://github.com/Skyinformatics-biz/FE-PTPro-Communication-Module)** - Platform messaging/com module interface.
+ 3. **[Profiles](https://github.com/Skyinformatics-biz/FE-PTPro-Profiles-Module)** - Platform members and dynamic profile pages.
+ 4. **[Public](https://github.com/Skyinformatics-biz/FE-PTPro-Public-Module)** - Public pages for platform visitors.
+ 5. **[Providers](https://github.com/Skyinformatics-biz/FE-PTPro-Providers-Module)** - Provider/service classes for all application modules.
+ 6. **[Secure](https://github.com/Skyinformatics-biz/FE-PTPro-Secure-Module)** - Authorized pages for platform members.
+ 7. **[Payment](https://github.com/Skyinformatics-biz/FE-PTPro-Payment-Module)** - Application/platform Subscription Interface.
 
 ## Commits 
 
